@@ -1,0 +1,14 @@
+doctype html
+html
+   head
+      include ./header
+      title Buscador películas || Pug
+      link(rel="stylesheet", href="css/style.css")
+   body
+      main.home
+         form(action="/film/" method="post")
+            label(for="title")
+                input(type="text" name="title" placeholder="Introduce el título de una película")
+            button(type="submit") Enviar
+      include ./footer
+      script(src="js/script.js")

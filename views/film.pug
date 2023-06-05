@@ -1,0 +1,15 @@
+doctype html
+html
+   head
+      link(rel="stylesheet", href="../css/style.css")
+      title #{data.title}
+   body
+      include ./header
+      main
+         p.greetings#people Aqui tienes el resultado de tu pelicula
+         section.flex_section
+            each val in data
+               article.flex_article= val
+            
+      include ./footer
+      script(src="../js/script.js")
