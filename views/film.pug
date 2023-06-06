@@ -5,11 +5,16 @@ html
       title #{data.title}
    body
       include ./header
-      main
+      main.film
          p.greetings#people Aqui tienes el resultado de tu pelicula
          section.flex_section
-            each val in data
-               article.flex_article= val
+            img.film-img(src=data.img)
+            article.film-info
+               span.film-title  #{data.title}
+               span.film-director #{data.director}
+               span.film-year #{data.year}
+            section.film-actors #{data.actors} 
+
             
       include ./footer
       script(src="../js/script.js")

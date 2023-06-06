@@ -1,8 +1,12 @@
 const fetchFilm = require("../utils/fetchFilm.js");
-
+let title;
 const getFilms = async (req, res) => {
-  let data = await fetchFilm(req.body.title);
+  let data = await fetchFilm(title);
   res.render("film", { data });
 };
 
-module.exports = { getFilms };
+const postFilm = async (req, res) => {
+  title = req.body.title;
+  res.redirect(`/film/${title}`);
+};
+module.exports = { getFilms, postFilm };
